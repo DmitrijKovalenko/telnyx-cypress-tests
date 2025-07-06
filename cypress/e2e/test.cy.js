@@ -236,12 +236,12 @@ describe("Telnyx homepage test", () => {
     });
   });
   
-  it("should go to contact us form and send incorrect form ", () => {
+  it.only("should go to contact us form and send incorrect form ", () => {
     cy.visit("https://telnyx.com");
     mainPage.contactUsBtn().click();
     cy.url().should("include", "/contact-us");
     cy.get(".c-PJLV.c-rMlRu.c-hLiKYq").should("contain", "Talk to an expert");
-    contactPage.selectSupportOption();
+    contactPage.selectSupportOption().scrollIntoView().should('be.visible');
     cy.get("#FirstName").type("Dimon");
     cy.get("#LastName").type("Pokemon");
     contactPage.submitBtn().click();
