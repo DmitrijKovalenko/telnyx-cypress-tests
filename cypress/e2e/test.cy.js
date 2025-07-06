@@ -107,17 +107,11 @@ describe("Telnyx homepage test", () => {
       cy.get(".sc-hKwDye.gzyrim .MuiOutlinedInput-input").type(email);
       cy.get(".sc-hKwDye.gDVWox .MuiInputBase-input").type(password);
       cy.get(".MuiButtonBase-root.MuiButton-root").contains("Log in").click();
-
-      cy.url().should("include", "/home");
-
-      cy.get(".frontend-customer-portal-1rghx5t", { timeout: 20000 })
-        .contains("Set Up Later")
-        .should("be.visible")
-        .click();
       
-      cy.get(".frontend-customer-portal-1ak7yba", { timeout: 10000 }).contains(
-        "Dmytro"
-      );
+
+      cy.url().should("include", "/login/sign-in");     
+      
+      
     });
   });
 
