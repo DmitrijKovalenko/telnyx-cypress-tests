@@ -6,7 +6,7 @@ class ContactPage {
 
   
   selectSupportOption() {
-    this.getHowCanWeHelpDropdown().select("Support");
+    this.getHowCanWeHelpDropdown().select("Support", { force: true });
     }
     submitBtn() {
         return cy.get(".mktoButtonRow .mktoButton").contains("Submit");
