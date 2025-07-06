@@ -182,7 +182,9 @@ describe("Telnyx homepage test", () => {
   it("should check developers api ", () => {
     cy.visit("https://telnyx.com");
     mainPage.developersBtn().click();
-    cy.get('.c-jLWzSx a[href="https://developers.telnyx.com"]')
+    cy.get('.c-jLWzSx a[href="https://developers.telnyx.com"]', {
+      timeout: 10000,
+    })
       .should("be.visible")
       .invoke("removeAttr", "target")
       .click();
